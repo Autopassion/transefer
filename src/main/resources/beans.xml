@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans>
+    <bean id="connectionUtils" class="utils.ConnectionUtils"></bean>
+    <bean id="accountDao" class="dao.impl.AccountDaoImpl">
+        <property name="ConnectionUtils" ref="connectionUtils"/>
+    </bean>
+    <bean id="transferService" class="service.impl.TransferServiceImpl">
+        <property name="AccountDao" ref="accountDao"/>
+    </bean>
+</beans>
